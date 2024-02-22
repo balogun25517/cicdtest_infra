@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cicd_test
+  name: cicdtest
   namespace: cicd
   labels:
     app: cicd
@@ -16,7 +16,7 @@ spec:
         app: cicd
     spec:
       containers:
-        - name: cicd_test
+        - name: cicdtest
           image:  grandeur.azurecr.io/cicd:1.0
           ports:
             - containerPort: 8080
