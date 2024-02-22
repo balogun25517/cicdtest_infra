@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: cicd
+  labels:
+    app: cicd
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: cicd
+  template:
+    metadata:
+      labels:
+        app: cicd
+    spec:
+      containers:
+        - name: cicd_test
+          image:  grandeur.azurecr.io/cicd:1.0
+          ports:
+            - containerPort: 8080
+      imagePullSecrets:
+      - name: grandeur
