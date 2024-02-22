@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: cicd_test
   namespace: cicd
   labels:
     app: cicd
