@@ -17,9 +17,9 @@ spec:
     spec:
       containers:
         - name: cicdtest
-          image:  grandeur.azurecr.io/cicd:1.0
+          image: grandeur.azurecr.io/cicd:1.0
           ports:
             - containerPort: 8080
       imagePullSecrets:
-      - name: grandeur
-      imagepullpolicy: Always
+        - name: grandeur
+      imagePullPolicy: Always
