@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cicdtest
-  namespace: cicd
+  namespace: cicdtest
   labels:
     app: cicd
 spec:
@@ -18,8 +18,9 @@ spec:
       containers:
         - name: cicdtest
           image: grandeur.azurecr.io/cicd:1.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
       imagePullSecrets:
         - name: grandeur
-      imagePullPolicy: Always
+      
